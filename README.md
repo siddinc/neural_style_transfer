@@ -21,7 +21,7 @@ Following the original NST paper, the VGG19 network is used.
 - Run `python main.py -cip <path_to_content_image> -sip <path_to_style_image>`
 
 ## Results:
-Content Image: The Golden Gate Bridge
+### Content Image: The Golden Gate Bridge <br>
 <img src="./images/samples/golden_gate.jpg" width="200" height="200" />
 
 Style Image: Starry Nights by Vincent Van Gogh
