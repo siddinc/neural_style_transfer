@@ -20,12 +20,13 @@ Following the original NST paper, the VGG19 network is used.
 - `cd` to `src`
 - Run `python main.py -cip <path_to_content_image> -sip <path_to_style_image>`
 
-## Results:
+## Inputs:
 ### Content Image: The Golden Gate Bridge <br>
-<img src="./images/samples/golden_gate.jpg" width="200" height="200" />
+<img src="./images/samples/golden_gate.jpg" width="300" height="300" />
 
-Style Image: Starry Nights by Vincent Van Gogh
-![OOPS](./images/samples/starry_night.jpg "Style Image")
+### Style Image: Starry Nights by Vincent Van Gogh <br>
+<img src="./images/samples/starry_night.jpg" width="300" height="300" />
 
-Generated Image:
-![OOPS](./images/output/18-03-2020-01:11:15.png "Generated Image")
+## Output:
+### Generated Image: <br>
+<img src="./images/output/18-03-2020-01:11:15.png" width="300" height="300" />
