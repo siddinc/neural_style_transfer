@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
+from datetime import datetime
 from PIL import Image
 from constants import (
   style_weights,
@@ -9,7 +10,10 @@ from constants import (
   style_layers,
   content_layers,
   num_content_layers,
-  num_style_layers
+  num_style_layers,
+  clip_max,
+  clip_min,
+  output_image_path
 )
 
 
@@ -29,11 +33,7 @@ def show_image(image):
 
 
 def clip_image(image):
-  return tf.clip_by_value(image, clip_value_min=0.0, clip_value_max=1.0)
-
-
-def generate_noise_image(image):
-  pass
+  return tf.clip_by_value(image, clip_value_min=clip_min, clip_value_max=clip_max)
 
 
 def tensor_to_image(input_tensor):
@@ -41,24 +41,27 @@ def tensor_to_image(input_tensor):
   np_img = np.array(input_tensor, dtype=np.uint8)
   if np.ndim(np_img) > 3:
     np_img = np_img[0]
-  show_image(np_img)
+  return np_img
+
+
+def save_image(np_image):
+  pil_img = Image.fromarray(np_image)
+  now = datetime.now()
+  img_name = now.strftime('%d-%m-%Y-%H:%M:%S')
+  pil_img.save(output_image_path + '/{}.png'.format(img_name))
 
 
 def gram_matrix(input_tensor):
-  temp = input_tensor
-  temp = tf.squeeze(temp)
-  temp = tf.reshape(temp, [input_tensor.shape[3], input_tensor.shape[1] * input_tensor.shape[2]])
-  result = tf.linalg.matmul(temp, temp, transpose_b=True)
-  result /= (input_tensor.shape[1] * input_tensor.shape[2])
-  gram_matrix = tf.expand_dims(result, axis=0)
+  result = tf.einsum('bijc,bijd->bcd', input_tensor, input_tensor)
+  input_shape = tf.shape(input_tensor)
+  num_locations = tf.cast(input_shape[1]*input_shape[2], tf.float32)
+  gram_matrix = result / num_locations
   return gram_matrix
 
 
 def total_loss(outputs, style_targets, content_targets):
   style_outputs = outputs['style']
   content_outputs = outputs['content']
-  # style_targets = outputs['style']
-  # content_targets = outputs['content']
 
   style_loss = tf.add_n([style_weights[name] * tf.reduce_mean((style_outputs[name] - style_targets[name]) ** 2) for name in style_outputs.keys()])
   style_loss *= style_weight / num_style_layers
@@ -68,9 +71,3 @@ def total_loss(outputs, style_targets, content_targets):
 
   total_loss = content_loss + style_loss
   return total_loss
-
-if __name__ == "__main__":
-  img = load_image('../images/dog.png')
-  # show_image(img)
-  # gram_matrix(img)
-  # tensor_to_img(img)
