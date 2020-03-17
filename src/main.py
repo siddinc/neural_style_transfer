@@ -1,3 +1,4 @@
+import argparse
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import time
@@ -36,9 +37,14 @@ def fit(image, extractor, style_targets, content_targets):
   save_image(np_img)
 
 
-if __name__ == "__main__":
-  content_image = load_image(sample_image_path + '/golden_gate.jpg')
-  style_image = load_image(sample_image_path + '/starry_night.jpg')
+if __name__ == '__main__':
+  ap = argparse.ArgumentParser()
+  ap.add_argument("-cip", "--content_img_path", required=True, help="path to content image")
+  ap.add_argument("-sip", "--style_img_path", required=True, help="path to style image")
+  args = vars(ap.parse_args())
+
+  content_image = load_image(args["content_img_path"])
+  style_image = load_image(args["style_img_path"])
 
   extractor = StyleContentModel(style_layers, content_layers)
   style_targets = extractor(style_image)['style']

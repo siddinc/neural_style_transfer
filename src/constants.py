@@ -35,5 +35,5 @@ learning_rate = 0.02
 beta_1 = 0.99
 epsilon = 1e-1
 
-epochs = 15
-steps_per_epoch = 50
+epochs = 1
+steps_per_epoch = 10
