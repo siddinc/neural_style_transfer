@@ -22,7 +22,7 @@ Following the original NST paper, the VGG19 network is used.
 
 ## Results:
 Content Image: The Golden Gate Bridge
-![OOPS](./images/samples/golden_gate.jpg "Content Image")
+<img src="./images/samples/golden_gate.jpg" width="200" height="200" />
 
 Style Image: Starry Nights by Vincent Van Gogh
 ![OOPS](./images/samples/starry_night.jpg "Style Image")
