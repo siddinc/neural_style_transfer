@@ -37,10 +37,8 @@ def fit(image, extractor, style_targets, content_targets):
 
 
 if __name__ == "__main__":
-  content_image = load_image(sample_image_path + '/hugh.jpg')
-  print(content_image.shape)
-  style_image = load_image(sample_image_path + '/sunflowers.jpg')
-  print(style_image.shape)
+  content_image = load_image(sample_image_path + '/golden_gate.jpg')
+  style_image = load_image(sample_image_path + '/starry_night.jpg')
 
   extractor = StyleContentModel(style_layers, content_layers)
   style_targets = extractor(style_image)['style']
