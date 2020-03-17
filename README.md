@@ -24,7 +24,7 @@ Following the original NST paper, the pre-trained VGG19 ConvNet is used.
 ### Content Image: The Golden Gate Bridge <br>
 <img src="./images/samples/golden_gate.jpg" width="300" height="300" />
 
-### Style Image: Starry Nights by Vincent Van Gogh <br>
+### Style Image: The Starry Night by Vincent Van Gogh <br>
 <img src="./images/samples/starry_night.jpg" width="300" height="300" />
 
 ## Output:
