@@ -6,8 +6,8 @@ The goal of this project is to implement the Neural Style Transfer (NST) Algorit
 - TensorFlow 2.0.0
 - Python 3.5.6
 
-## Pre-Trained Models:
-Following the original NST paper, the VGG19 network is used.
+## Pre-Trained Model:
+Following the original NST paper, the pre-trained VGG19 ConvNet is used.
 > This model has already been trained on the very large ImageNet database, and thus has learned to recognize a variety of low level features (at the shallower layers) and high level features (at the deeper layers).
 
 ## Instructions to run:
