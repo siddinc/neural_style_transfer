@@ -24,7 +24,7 @@ Following the original NST paper, the pre-trained VGG19 ConvNet is used.
 ### Content Image: Octopus <br>
 <img src="./images/samples/octopus.jpg" width="300" height="300" />
 
-### Style Image: The Starry Night by Vincent Van Gogh <br>
+### Style Image: Delaunay painting <br>
 <img src="./images/samples/delaunay.jpg" width="300" height="300" />
 
 ## Output:
