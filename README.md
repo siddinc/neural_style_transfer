@@ -21,12 +21,12 @@ Following the original NST paper, the pre-trained VGG19 ConvNet is used.
 - Run `python main.py -cip <path_to_content_image> -sip <path_to_style_image>`
 
 ## Inputs:
-### Content Image: The Golden Gate Bridge <br>
-<img src="./images/samples/golden_gate.jpg" width="300" height="300" />
+### Content Image: Octopus <br>
+<img src="./images/samples/octopus.jpg" width="300" height="300" />
 
 ### Style Image: The Starry Night by Vincent Van Gogh <br>
-<img src="./images/samples/starry_night.jpg" width="300" height="300" />
+<img src="./images/samples/delaunay.jpg" width="300" height="300" />
 
 ## Output:
 ### Generated Image: <br>
-<img src="./images/output/18-10-2020-23:49:00.png" width="300" height="300" />
+<img src="./images/output/14-10-2020-11:02:54.png" width="300" height="300" />
