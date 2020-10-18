@@ -29,4 +29,4 @@ Following the original NST paper, the pre-trained VGG19 ConvNet is used.
 
 ## Output:
 ### Generated Image: <br>
-<img src="./images/output/18-03-2020-01:11:15.png" width="300" height="300" />
+<img src="./images/output/18-10-2020-23:49:00.png" width="300" height="300" />
