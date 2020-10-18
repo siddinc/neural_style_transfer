@@ -18,7 +18,7 @@ Following the original NST paper, the pre-trained VGG19 ConvNet is used.
   - Run `pip install -r requirements.txt`
 - Choose a `content_image` and a `style_image` from `images/samples` or take 2 RGB input images of your choice of dimensions approximately near 400x400 pixels
 - `cd` to `src`
-- Run `python main.py -cip <path_to_content_image> -sip <path_to_style_image>`
+- Run `python main.py -cip <path_to_content_image> -sip <path_to_style_image>` -noe `<no_of_epochs>`
 
 ## Inputs:
 ### Content Image: Octopus <br>
